@@ -3,8 +3,8 @@ from sklearn.datasets import load_iris
 from sklearn import tree
 
 iris = load_iris()
-#print(iris.feature_names)
-#print(iris.target_names)
+print(iris.feature_names)
+print(iris.target_names)
 #print(iris.data[0])
 test_idx = [0,50,100]
 
@@ -19,8 +19,8 @@ test_data = iris.data[test_idx]
 clf = tree.DecisionTreeClassifier()
 clf.fit(train_data, train_target)
 
-print(test_target)
-print(clf.predict(test_data))
+#print(test_target)
+#print(clf.predict(test_data))
 
 #viz code
 from sklearn.externals.six import StringIO
@@ -35,4 +35,4 @@ tree.export_graphviz(clf,
 graph = pydotplus.graph_from_dot_data(dot_data.getvalue())
 graph.write_pdf("iris.pdf")
 
-print(test_data[0], test_target[0])
+print(test_data[2], test_target[2])
